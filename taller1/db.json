@@ -1,0 +1,25 @@
+{
+    "clientes": [
+        {
+            "id": "1",
+            "nombre": "Danny G.",
+            "ciudad": "Quito, Ecuador",
+            "direccion": "Ladron de Guevara",
+            "edad": 30
+        },
+        {
+            "id": "2",
+            "nombre": "Cristina",
+            "ciudad": "Quito, Ecuador",
+            "direccion": "Av Colón y 10 de Agosto",
+            "edad": 15
+        },
+        {
+            "id": "3",
+            "nombre": "Alex",
+            "ciudad": "Quito, Ecuador",
+            "direccion": "Av Colón y 10 de Agosto",
+            "edad": 17
+        }
+        ]
+    }
