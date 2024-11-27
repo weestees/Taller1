@@ -8,22 +8,27 @@ const CinfestList = ({setCinfest}) => {
     const [Cinfest, setNewCinfest] = useState([]);
     const [selectedCinfest, setSelectedCinfest] = useState(null);
 
+    const loadCinfest = () => {
+        axios.get('http://localhost:3001/clientes')
+            .then(response => {
+                console.log('Datos obtenidos:', response.data);
+                setNewCinfest(response.data);
+            })
+            .catch(error => {
+                console.error('Error al obtener los datos:', error);
+            });
+    };
+
     useEffect(() => {
-        const loadCinfest = () => {
-            axios.get('http://localhost:3001/clientes')
-                .then(response => {
-                    console.log('Datos obtenidos:', response.data);
-                    setNewCinfest(response.data);
-                })
-                .catch(error => {
-                    console.error('Error al obtener los datos:', error);
-                });
-        };
         loadCinfest();
     }, []);
 
-    const mayoresDe18 = Cinfest.filter(cinf => cinf.edad >= 18);
-    const menoresDe18 = Cinfest.filter(cinf => cinf.edad < 18);
+    useEffect(() => {
+        console.log('Lista de clientes actualizada:', Cinfest);
+    }, [Cinfest]);
+
+    const mayoresDe18 = Cinfest.filter(cinf => cinf.age >= 18);
+    const menoresDe18 = Cinfest.filter(cinf => cinf.age < 18);
 
     return (
         <div className="app-container">
@@ -32,34 +37,36 @@ const CinfestList = ({setCinfest}) => {
                 <div className="column">
                     <h2>Allowed</h2>
                     {mayoresDe18.map((cinf, index) => (
-                        <div key={index}>
-                            <ItemCinfest
-                                nombre={cinf.nombre}
-                                ciudad={cinf.ciudad}
-                                direccion={cinf.direccion}
-                                edad={cinf.edad}
-                            />
-                            <button onClick={() => setSelectedCinfest(cinf)}>Select</button>
-                        </div>
+                        <ItemCinfest
+                            key={index}
+                            avatarURL={cinf.avatarURL}
+                            name={cinf.name}
+                            city={cinf.city}
+                            country={cinf.country}
+                            address={cinf.address}
+                            age={cinf.age}
+                            onSelect={() => setSelectedCinfest(cinf)}
+                        />
                     ))}
                 </div>
                 <div className="column">
                     <h2>Not Allowed</h2>
                     {menoresDe18.map((cinf, index) => (
-                        <div key={index}>
-                            <ItemCinfest
-                                nombre={cinf.nombre}
-                                ciudad={cinf.ciudad}
-                                direccion={cinf.direccion}
-                                edad={cinf.edad}
-                            />
-                            <button onClick={() => setSelectedCinfest(cinf)}>Select</button>
-                        </div>
+                        <ItemCinfest
+                            key={index}
+                            avatarURL={cinf.avatarURL}
+                            name={cinf.name}
+                            city={cinf.city}
+                            country={cinf.country}
+                            address={cinf.address}
+                            age={cinf.age}
+                            onSelect={() => setSelectedCinfest(cinf)}
+                        />
                     ))}
                 </div>
             </div>
             <hr />
-            <ClientSelect selectedCinfest={selectedCinfest} />
+            <ClientSelect selectedCinfest={selectedCinfest} setSelectedCinfest={setSelectedCinfest} setNewCinfest={setNewCinfest} />
         </div>
     );
 };

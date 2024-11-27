@@ -1,13 +1,17 @@
 // ItemCinfest.jsx
 import React from 'react';
 
-const ItemCinfest = ({ nombre, ciudad, direccion, edad }) => {
+const ItemCinfest = ({ avatarURL, name, city, country, address, age, onSelect }) => {
     return (
         <div className="item-cinfest">
-            <h4>{nombre}</h4>
-            <p> {ciudad}</p>
-            <p> {direccion}</p>
-            <p> {edad}</p>
+            <img src={avatarURL} alt={`${name}'s avatar`} className="user-icon" />
+            <div className="item-details">
+                <h4>{name}</h4>
+                <p>{city}, {country}</p>
+                <p>{address}</p>
+                <p>{age}</p>
+                <button className="select-button" onClick={onSelect}>Select</button>
+            </div>
         </div>
     );
 };

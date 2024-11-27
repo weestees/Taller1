@@ -1,25 +1,41 @@
 {
-    "clientes": [
-        {
-            "id": "1",
-            "nombre": "Danny G.",
-            "ciudad": "Quito, Ecuador",
-            "direccion": "Ladron de Guevara",
-            "edad": 30
-        },
-        {
-            "id": "2",
-            "nombre": "Cristina",
-            "ciudad": "Quito, Ecuador",
-            "direccion": "Av Colón y 10 de Agosto",
-            "edad": 15
-        },
-        {
-            "id": "3",
-            "nombre": "Alex",
-            "ciudad": "Quito, Ecuador",
-            "direccion": "Av Colón y 10 de Agosto",
-            "edad": 17
-        }
-        ]
+  "clientes": [
+    {
+      "id": "1",
+      "avatarURL": "https://img.freepik.com/free-psd/3dillustration-person-with-sunglasses_23-2149436188.jpg?size=626&ext=jpg",
+      "name": "Danny G.",
+      "city": "Quito",
+      "country": "Ecuador",
+      "address": "Ladrón de Guevara E11-253",
+      "age": 38
+    },
+    {
+      "id": "2",
+      "avatarURL": "https://img.freepik.com/free-psd/3dillustration-person-with-sunglasses_23-2149436188.jpg?size=626&ext=jpg",
+      "name": "Cristina",
+      "city": "Quito",
+      "country": "Ecuador",
+      "address": "Av. Colón y 10 de Agosto",
+      "age": 15
+    },
+    {
+      "id": "3",
+      "avatarURL": "https://img.freepik.com/free-psd/3dillustration-person-with-sunglasses_23-2149436188.jpg?size=626&ext=jpg",
+      "name": "Jorge",
+      "city": "Ambato",
+      "country": "Ecuador",
+      "address": "La República y 5 de Septiembre",
+      "age": 25
+    },
+    {
+      "id": "4",
+      "avatarURL": "https://img.freepik.com/free-psd/3dillustration-person-with-sunglasses_23-2149436188.jpg?size=626&ext=jpg",
+      "name": "Santiago",
+      "city": "Guayaquil",
+      "country": "Ecuador",
+      "address": "10 de Agosto",
+      "age": 18,
+      "edad": null
     }
+  ]
+}
